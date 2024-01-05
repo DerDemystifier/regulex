@@ -4,5 +4,5 @@
     out: 'dist/regulex.js',
     optimize: 'uglify2',
     wrap: false,
-    include: ['libs/almond','regulex']
-})
+    include: ['libs/almond', 'regulex'],
+});

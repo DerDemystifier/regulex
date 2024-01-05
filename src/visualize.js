@@ -38,8 +38,8 @@ function visualize(re,flags,paper) {
   var bg = paper.rect(0,0,0,0);
   bg.attr("fill", BG_COLOR);
   bg.attr("stroke", BG_COLOR);
-  
-  
+
+
   initTmpText(paper);
   _multiLine=!!~flags.indexOf('m');
 
@@ -62,7 +62,7 @@ function visualize(re,flags,paper) {
   width+=PAPER_MARGIN;
   height=charSize.height+PAPER_MARGIN*2;
   texts=paper.add(texts);
-  
+
   paper.setSize(width,charSize.height+PAPER_MARGIN*2);
 
   var ret=plot(re.tree,0,0);
@@ -71,14 +71,14 @@ function visualize(re,flags,paper) {
   width=Math.max(ret.width+2*PAPER_MARGIN,width);
 
   paper.setSize(width,height);
-  
+
   bg.attr('width',width);
   bg.attr('height',height);
-  
-  
+
+
   translate(ret.items,PAPER_MARGIN,PAPER_MARGIN*2+charSize.height-ret.y);
   paper.add(ret.items);
-  
+
 }
 
 
@@ -637,20 +637,20 @@ var plotNode={
     if (nat===AssertLookahead) {
       lineColor="CornflowerBlue";
       fg="darkgreen";
-      txt="Followed by:";
+      txt="if followed by:";
     } else if (nat===AssertNegativeLookahead) {
       lineColor="#F63";
       fg="Purple";
       //txt="Negative\nLookahead!"; // break line
-      txt="Not followed by:";
+      txt="if not followed by:";
     } else if (nat === AssertLookbehind) {
       lineColor="LightSeaGreen";
       fg="Brown";
-      txt="Preceded by:";
+      txt="if preceded by:";
     } else if (nat === AssertNegativeLookbehind) {
       lineColor="#F69";
       fg="MediumVioletRed";
-      txt="Not preceded by:";
+      txt="if not preceded by:";
     }
 
     var sub=plotNode.group(node,x,y);
